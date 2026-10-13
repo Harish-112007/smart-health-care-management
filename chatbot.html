@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Healthcare Management System - academic demonstration project">
+  <title>AI Chatbot | Smart Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar is created by js/app.js -->
+  <div id="navbar"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <h1>AI healthcare chatbot</h1>
+      <p>Ask general health questions and get simple, educational answers.</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:24px">
+    <div class="container chat-shell">
+      <div class="alert alert-warning">⚠️ This chatbot provides general health information only. It does not replace a qualified doctor or medical professional. For serious or emergency symptoms, seek professional medical care.</div>
+
+      <div class="chat-window" id="chatWindow" aria-live="polite"></div>
+
+      <form class="chat-form" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Type your health question" maxlength="300" autocomplete="off" aria-label="Your message">
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send</button>
+        <button type="button" class="btn btn-outline" id="clearChat">Clear chat</button>
+      </form>
+
+      <div class="suggestions">
+        <button type="button" onclick="askSuggestion('What is a fever?')">What is a fever?</button>
+        <button type="button" onclick="askSuggestion('What is dehydration?')">What is dehydration?</button>
+        <button type="button" onclick="askSuggestion('How can I maintain a healthy lifestyle?')">Healthy lifestyle</button>
+        <button type="button" onclick="askSuggestion('When should I see a doctor?')">When to see a doctor</button>
+        <button type="button" onclick="askSuggestion('What are common cold symptoms?')">Common cold symptoms</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer is created by js/app.js -->
+  <div id="footer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

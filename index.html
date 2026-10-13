@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Healthcare Management System - academic demonstration project">
+  <title>Home | Smart Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar is created by js/app.js -->
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>See a doctor, check a medicine, ask a health question. All in one place.</h1>
+        <p class="lead">Smart Healthcare lets patients register, find doctors, book and manage appointments, read basic medicine information and chat with a general health assistant.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="appointment.html"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>
+          <a class="btn btn-outline" href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        </div>
+      </div>
+
+      <!-- Sample confirmation card (static preview of what patients receive) -->
+      <aside class="hero-ticket" aria-label="Sample appointment confirmation">
+        <div class="ticket-head"><span><span class="pulse"></span>Appointment confirmed</span><span class="badge badge-confirmed">Sample</span></div>
+        <div class="ticket-row"><span>Doctor</span><strong>Dr. Priya Sharma</strong></div>
+        <div class="ticket-row"><span>Specialization</span><strong>Cardiologist</strong></div>
+        <div class="ticket-row"><span>Day</span><strong>Wednesday</strong></div>
+        <div class="ticket-row"><span>Time</span><strong>10:00 AM</strong></div>
+        <div class="ticket-row"><span>Appointment ID</span><strong>APT-20261007-4821</strong></div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What you can do here</h2>
+      <p class="section-sub">Every service is one click away from the menu.</p>
+      <div class="grid grid-3">
+        <a class="card card-link" href="doctors.html"><div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div><h3>Find a doctor</h3><p>Browse doctors by specialization, see their days and timings.</p></a>
+        <a class="card card-link" href="appointment.html"><div class="icon-box green"><i class="fa-regular fa-calendar-check"></i></div><h3>Book an appointment</h3><p>Choose a date and a free time slot. Booked slots are blocked automatically.</p></a>
+        <a class="card card-link" href="my-appointments.html"><div class="icon-box"><i class="fa-solid fa-list-check"></i></div><h3>Manage appointments</h3><p>View details or cancel upcoming appointments.</p></a>
+        <a class="card card-link" href="medicines.html"><div class="icon-box green"><i class="fa-solid fa-pills"></i></div><h3>Medicine information</h3><p>Uses, side effects and precautions of common medicines.</p></a>
+        <a class="card card-link" href="chatbot.html"><div class="icon-box"><i class="fa-solid fa-robot"></i></div><h3>AI health chatbot</h3><p>Ask general health questions any time of the day.</p></a>
+        <a class="card card-link" href="patients.html"><div class="icon-box green"><i class="fa-solid fa-notes-medical"></i></div><h3>Patient records</h3><p>Admin-style view of patients and their appointments, with search.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (this really is a sequence) -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">How booking works</h2>
+      <p class="section-sub">Four short steps from sign-up to confirmation.</p>
+      <ol class="steps">
+        <li><strong>Create an account</strong><span class="text-muted">Register with your basic details.</span></li>
+        <li><strong>Pick a doctor</strong><span class="text-muted">Check their available days and timings.</span></li>
+        <li><strong>Choose a slot</strong><span class="text-muted">Select a future date and a free time.</span></li>
+        <li><strong>Get confirmation</strong><span class="text-muted">Receive an Appointment ID and manage it later.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- EMERGENCY / HEALTH INFORMATION -->
+  <section class="section">
+    <div class="container">
+      <div class="emergency">
+        <div>
+          <h2><i class="fa-solid fa-triangle-exclamation"></i> In an emergency, do not wait for an appointment</h2>
+          <p>Call your local emergency number straight away (for example 112 in India, 911 in the US) or go to the nearest hospital. This website cannot handle emergencies.</p>
+        </div>
+        <div>
+          <strong>Seek emergency care for:</strong>
+          <ul>
+            <li>Chest pain or pressure</li>
+            <li>Difficulty breathing</li>
+            <li>Sudden weakness, confusion or trouble speaking</li>
+            <li>Severe bleeding or loss of consciousness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer is created by js/app.js -->
+  <div id="footer"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

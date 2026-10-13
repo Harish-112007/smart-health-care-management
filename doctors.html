@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Healthcare Management System - academic demonstration project">
+  <title>Doctors | Smart Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar is created by js/app.js -->
+  <div id="navbar"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <h1>Our doctors</h1>
+      <p>Search by name or filter by specialization, then book a visit.</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:24px">
+    <div class="container">
+      <div class="toolbar">
+        <input type="search" id="doctorSearch" placeholder="Search doctor name or specialization" aria-label="Search doctors">
+        <select id="specializationFilter" aria-label="Filter by specialization">
+          <option value="">All specializations</option>
+        </select>
+      </div>
+      <div id="doctorList" class="grid grid-3"></div>
+    </div>
+  </section>
+
+  <!-- Footer is created by js/app.js -->
+  <div id="footer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/doctors.js"></script>
+</body>
+</html>

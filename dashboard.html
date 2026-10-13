@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Healthcare Management System - academic demonstration project">
+  <title>Dashboard | Smart Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar is created by js/app.js -->
+  <div id="navbar"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <h1 id="welcomeName">Welcome</h1>
+      <p>Here is a summary of your appointments.</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:24px">
+    <div class="container">
+
+      <!-- Appointment counts -->
+      <div class="grid grid-4" style="margin-bottom:20px">
+        <div class="card stat"><div class="num" id="statTotal">0</div><div class="label">Total appointments</div></div>
+        <div class="card stat"><div class="num" id="statUpcoming" style="color:var(--blue)">0</div><div class="label">Upcoming</div></div>
+        <div class="card stat"><div class="num" id="statCompleted" style="color:var(--teal-dark)">0</div><div class="label">Completed</div></div>
+        <div class="card stat"><div class="num" id="statCancelled" style="color:var(--danger)">0</div><div class="label">Cancelled</div></div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <h3 style="margin-bottom:8px">Your information</h3>
+          <ul class="info-list" id="patientInfo"></ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:8px">Next appointments</h3>
+          <div id="upcomingList"></div>
+        </div>
+      </div>
+
+      <!-- Quick buttons -->
+      <h2 class="section-title" style="font-size:1.25rem">Quick actions</h2>
+      <div class="btn-row" style="margin-top:12px">
+        <a class="btn btn-primary" href="appointment.html"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>
+        <a class="btn btn-outline" href="my-appointments.html"><i class="fa-solid fa-list-check"></i> My Appointments</a>
+        <a class="btn btn-outline" href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find Doctor</a>
+        <a class="btn btn-outline" href="medicines.html"><i class="fa-solid fa-pills"></i> Medicine Search</a>
+        <a class="btn btn-outline" href="chatbot.html"><i class="fa-solid fa-robot"></i> AI Chatbot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer is created by js/app.js -->
+  <div id="footer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

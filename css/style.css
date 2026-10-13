@@ -1,0 +1,253 @@
+/* ==========================================================
+   Smart Healthcare Management System - style.css
+   One stylesheet shared by every page.
+   Sections: 1 Variables | 2 Base | 3 Navbar | 4 Buttons |
+   5 Hero | 6 Layout & Cards | 7 Forms | 8 Alerts & Badges |
+   9 Doctors | 10 Booking slots | 11 Appointments | 12 Tables |
+   13 Modal | 14 Chatbot | 15 Footer | 16 Responsive
+   ========================================================== */
+
+/* 1. VARIABLES (change colours here to re-theme the site) */
+:root {
+  --blue: #1b5faa;
+  --blue-dark: #144a87;
+  --teal: #0f9d84;
+  --teal-dark: #0b7d69;
+  --ink: #14283c;
+  --muted: #566b7c;
+  --line: #dbe7ee;
+  --mist: #f1f7fa;
+  --white: #ffffff;
+  --danger: #c0392b;
+  --danger-bg: #fdecea;
+  --ok-bg: #e5f6f1;
+  --warn-bg: #fff6e0;
+  --warn: #8a5a00;
+  --radius: 16px;
+  --shadow: 0 8px 28px rgba(27, 95, 170, 0.09);
+}
+
+/* 2. BASE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+.container { width: min(1140px, 92%); margin-inline: auto; }
+.section { padding: 56px 0; }
+.section-alt { background: var(--mist); }
+.section-title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 8px; }
+.section-sub { color: var(--muted); max-width: 60ch; margin-bottom: 28px; }
+.text-muted { color: var(--muted); }
+.hidden { display: none !important; }
+
+/* 3. NAVBAR */
+.navbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+.brand:hover { text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--blue), var(--teal)); }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a, .nav-links button.link-btn { display: block; padding: 8px 12px; border-radius: 10px; color: var(--ink); font-weight: 600; font-size: .95rem; background: none; border: 0; cursor: pointer; font-family: inherit; }
+.nav-links a:hover, .nav-links button.link-btn:hover { background: var(--mist); text-decoration: none; }
+.nav-links a.active { color: var(--blue); background: #e6f0fa; }
+.nav-links a.nav-cta { background: var(--blue); color: #fff; margin-left: 6px; }
+.nav-links a.nav-cta:hover { background: var(--blue-dark); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; color: var(--ink); }
+
+/* 4. BUTTONS */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border: 0; border-radius: 12px; font: inherit; font-weight: 700; cursor: pointer; transition: transform .15s ease, background .15s ease, box-shadow .15s ease; }
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-green { background: var(--teal); color: #fff; }
+.btn-green:hover { background: var(--teal-dark); }
+.btn-outline { background: #fff; color: var(--blue); border: 2px solid var(--blue); padding: 10px 20px; }
+.btn-outline:hover { background: #e6f0fa; }
+.btn-danger { background: #fff; color: var(--danger); border: 2px solid var(--danger); padding: 8px 16px; }
+.btn-danger:hover { background: var(--danger-bg); }
+.btn-sm { padding: 8px 14px; font-size: .9rem; border-radius: 10px; }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* 5. HERO (home page) */
+.hero { background: linear-gradient(180deg, #eef6fb 0%, #ffffff 100%); padding: 64px 0 48px; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(2rem, 4.6vw, 3.3rem); margin-bottom: 16px; }
+.hero p.lead { font-size: 1.1rem; color: var(--muted); max-width: 52ch; margin-bottom: 26px; }
+.hero-ticket { background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); padding: 22px; animation: rise .7s ease both; }
+.ticket-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-weight: 800; }
+.pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); display: inline-block; margin-right: 8px; box-shadow: 0 0 0 0 rgba(15,157,132,.6); animation: pulse 2s infinite; }
+.ticket-row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px dashed var(--line); font-size: .95rem; }
+.ticket-row span:first-child { color: var(--muted); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(15,157,132,0); } 100% { box-shadow: 0 0 0 0 rgba(15,157,132,0); } }
+
+/* 6. LAYOUT & CARDS */
+.grid { display: grid; gap: 20px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.card-link { display: block; color: inherit; transition: transform .18s ease, border-color .18s ease; }
+.card-link:hover { text-decoration: none; transform: translateY(-3px); border-color: var(--teal); }
+.icon-box { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-size: 1.2rem; margin-bottom: 14px; background: #e6f0fa; color: var(--blue); }
+.icon-box.green { background: var(--ok-bg); color: var(--teal-dark); }
+.card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.card p { color: var(--muted); font-size: .95rem; }
+.steps { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.steps li { counter-increment: step; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.steps li::before { content: counter(step); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 800; margin-bottom: 10px; }
+.steps strong { display: block; margin-bottom: 4px; }
+.emergency { background: #fff; border: 2px solid var(--danger); border-radius: var(--radius); padding: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.emergency h2 { color: var(--danger); margin-bottom: 8px; }
+.emergency ul { padding-left: 20px; color: var(--ink); }
+.page-head { background: linear-gradient(180deg, #eef6fb, #fff); padding: 36px 0 20px; }
+.page-head h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin-bottom: 6px; }
+.page-head p { color: var(--muted); }
+.stat { text-align: left; }
+.stat .num { font-size: 2rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+.stat .label { color: var(--muted); font-size: .92rem; }
+.info-list { list-style: none; }
+.info-list li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.info-list li:last-child { border-bottom: 0; }
+.info-list span:first-child { color: var(--muted); }
+.info-list span:last-child { font-weight: 700; text-align: right; word-break: break-word; }
+
+/* 7. FORMS */
+.form-card { max-width: 640px; margin: 0 auto; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.field.full { grid-column: 1 / -1; }
+label { font-weight: 700; font-size: .92rem; }
+input, select, textarea { font: inherit; padding: 11px 13px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); width: 100%; }
+input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: 3px solid #cfe2f6; }
+input[readonly] { background: var(--mist); color: var(--muted); }
+textarea { resize: vertical; min-height: 90px; }
+.invalid { border-color: var(--danger) !important; }
+.field-error { color: var(--danger); font-size: .85rem; min-height: 0; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+.toolbar input { flex: 2 1 240px; }
+.toolbar select { flex: 1 1 180px; }
+
+/* 8. ALERTS & BADGES */
+.alert { padding: 12px 16px; border-radius: 12px; margin-bottom: 16px; font-weight: 600; font-size: .95rem; }
+.alert-error { background: var(--danger-bg); color: var(--danger); }
+.alert-success { background: var(--ok-bg); color: var(--teal-dark); }
+.alert-warning { background: var(--warn-bg); color: var(--warn); }
+.alert-info { background: #e6f0fa; color: var(--blue-dark); }
+.badge { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: .8rem; font-weight: 800; }
+.badge-confirmed { background: var(--ok-bg); color: var(--teal-dark); }
+.badge-cancelled { background: var(--danger-bg); color: var(--danger); }
+.badge-completed { background: #e6f0fa; color: var(--blue-dark); }
+.badge-none { background: var(--mist); color: var(--muted); }
+.empty { text-align: center; color: var(--muted); padding: 40px 16px; border: 2px dashed var(--line); border-radius: var(--radius); }
+.empty i { font-size: 2rem; margin-bottom: 8px; display: block; color: var(--blue); }
+
+/* 9. DOCTORS */
+.doctor-card { display: flex; flex-direction: column; gap: 10px; }
+.doc-top { display: flex; gap: 14px; align-items: center; }
+.avatar { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 800; font-size: 1.1rem; color: #fff; background: linear-gradient(135deg, var(--blue), var(--teal)); flex-shrink: 0; }
+.doc-spec { color: var(--teal-dark); font-weight: 700; font-size: .92rem; }
+.doc-meta { list-style: none; font-size: .92rem; color: var(--muted); }
+.doc-meta li { padding: 3px 0; }
+.doc-meta i { width: 20px; color: var(--blue); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--mist); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: .82rem; font-weight: 600; }
+.chip.day { background: #e6f0fa; border-color: #c7dcf1; color: var(--blue-dark); }
+.doctor-card .btn { margin-top: auto; }
+
+/* 10. BOOKING SLOTS */
+.avail-box { background: var(--mist); border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; font-size: .92rem; }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+.slot { padding: 10px 6px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; font: inherit; font-weight: 700; cursor: pointer; text-align: center; color: var(--ink); }
+.slot:hover:not(:disabled) { border-color: var(--teal); }
+.slot.selected { background: var(--teal); border-color: var(--teal); color: #fff; }
+.slot.booked { background: var(--mist); color: #9aa9b5; cursor: not-allowed; }
+.slot.booked small { display: block; color: var(--danger); font-weight: 800; }
+.confirm-card { border: 2px solid var(--teal); }
+.confirm-card h2 { color: var(--teal-dark); margin-bottom: 14px; }
+
+/* 11. APPOINTMENT CARDS */
+.appt-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.appt-card .appt-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
+.appt-id { font-weight: 800; }
+.appt-card .info-list { margin-bottom: 14px; }
+.upcoming-item { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.upcoming-item:last-child { border-bottom: 0; }
+
+/* 12. TABLES */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+table { width: 100%; border-collapse: collapse; min-width: 980px; font-size: .92rem; }
+th { text-align: left; background: var(--mist); padding: 12px 14px; white-space: nowrap; border-bottom: 1px solid var(--line); }
+td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: #f8fbfd; }
+
+/* 13. MODAL */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(20,40,60,.5); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 100; }
+.modal-backdrop.open { display: flex; }
+.modal { background: #fff; border-radius: 20px; padding: 26px; width: min(480px, 100%); max-height: 90vh; overflow-y: auto; animation: rise .25s ease both; }
+.modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.modal-close { background: none; border: 0; font-size: 1.3rem; cursor: pointer; color: var(--muted); }
+
+/* 14. CHATBOT */
+.chat-shell { max-width: 780px; margin: 0 auto; }
+.chat-window { height: 440px; overflow-y: auto; background: var(--mist); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.msg { max-width: 82%; padding: 11px 15px; border-radius: 16px; white-space: pre-line; font-size: .95rem; }
+.msg.bot { background: #fff; border: 1px solid var(--line); align-self: flex-start; border-bottom-left-radius: 4px; }
+.msg.user { background: var(--blue); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+.msg.emergency { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); font-weight: 600; }
+.msg.typing { color: var(--muted); font-style: italic; }
+.chat-form { display: flex; gap: 10px; margin: 14px 0; }
+.chat-form input { flex: 1; }
+.suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.suggestions button { background: #fff; border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; color: var(--blue-dark); }
+.suggestions button:hover { border-color: var(--teal); }
+
+/* Medicine cards */
+.med-card h3 { color: var(--blue-dark); margin-bottom: 4px; }
+.med-card .med-type { color: var(--teal-dark); font-weight: 700; font-size: .88rem; margin-bottom: 10px; }
+.med-card h4 { font-size: .92rem; margin: 12px 0 4px; }
+.med-card ul { padding-left: 20px; color: var(--muted); font-size: .93rem; }
+.med-warning { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 10px 12px; margin-top: 12px; font-size: .9rem; }
+
+/* 15. FOOTER */
+.footer { background: var(--ink); color: #c9d6e0; padding: 40px 0 24px; margin-top: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+.footer h4 { color: #fff; margin-bottom: 10px; }
+.footer a { color: #c9d6e0; display: block; padding: 3px 0; }
+.footer-note { border-top: 1px solid rgba(255,255,255,.15); padding-top: 16px; font-size: .85rem; }
+
+/* 16. RESPONSIVE */
+@media (max-width: 1000px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .nav-toggle { display: block; }
+  .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 12px 4%; border-bottom: 1px solid var(--line); gap: 2px; }
+  .nav-links.open { display: flex; }
+  .nav-links a.nav-cta { margin: 6px 0 0; text-align: center; }
+}
+@media (max-width: 640px) {
+  .grid-3, .grid-4, .grid-2, .steps, .form-grid, .emergency, .footer-grid { grid-template-columns: 1fr; }
+  .section { padding: 40px 0; }
+  .hero { padding: 40px 0 32px; }
+  .appt-list { grid-template-columns: 1fr; }
+  .msg { max-width: 92%; }
+  .chat-window { height: 380px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

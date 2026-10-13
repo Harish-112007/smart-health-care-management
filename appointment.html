@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Healthcare Management System - academic demonstration project">
+  <title>Book Appointment | Smart Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar is created by js/app.js -->
+  <div id="navbar"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <h1>Book an appointment</h1>
+      <p>Choose a doctor, a future date and a free time slot.</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:24px">
+    <div class="container">
+
+      <!-- Booking form -->
+      <div class="card form-card" id="bookingCard">
+        <div id="formMessage" class="hidden" role="alert"></div>
+
+        <form id="bookingForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="patientName">Patient name</label>
+              <input type="text" id="patientName" readonly>
+            </div>
+            <div class="field">
+              <label for="patientId">Patient ID</label>
+              <input type="text" id="patientId" readonly>
+            </div>
+            <div class="field">
+              <label for="doctorSelect">Select doctor</label>
+              <select id="doctorSelect">
+                <option value="">Choose a doctor</option>
+              </select>
+              <small class="field-error" id="err-doctorSelect"></small>
+            </div>
+            <div class="field">
+              <label for="specialization">Doctor specialization</label>
+              <input type="text" id="specialization" readonly>
+            </div>
+          </div>
+
+          <!-- Shows the selected doctor's days and slots -->
+          <div id="availabilityInfo" class="avail-box hidden"></div>
+
+          <div class="field">
+            <label for="dateInput">Select date</label>
+            <input type="date" id="dateInput">
+            <small class="field-error" id="err-dateInput"></small>
+          </div>
+
+          <div class="field">
+            <label>Select available time</label>
+            <small class="text-muted" id="slotHint">Choose a doctor first.</small>
+            <div class="slot-grid" id="slotGrid"></div>
+            <input type="hidden" id="selectedTime">
+            <small class="field-error" id="err-selectedTime"></small>
+          </div>
+
+          <div class="field">
+            <label for="reason">Reason for visit</label>
+            <textarea id="reason" maxlength="200" placeholder="For example: fever for two days"></textarea>
+            <small class="field-error" id="err-reason"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Book Appointment</button>
+        </form>
+      </div>
+
+      <!-- Confirmation card (filled after booking) -->
+      <div class="card form-card confirm-card hidden" id="confirmation"></div>
+    </div>
+  </section>
+
+  <!-- Footer is created by js/app.js -->
+  <div id="footer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/appointments.js"></script>
+</body>
+</html>
